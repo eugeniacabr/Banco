@@ -8,6 +8,8 @@ public class ClienteA extends Cliente implements InterfaceClienteService {
         super(idCliente,nombre,apellido,telefono,email,fechaAlta,cuentas,ingresoMensual,prestamos);
     }
 
+    public ClienteA(){}
+
 
     @Override
     public Float calculoPrestamo() {
