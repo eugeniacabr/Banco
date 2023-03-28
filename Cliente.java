@@ -1,8 +1,10 @@
+
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+
+
 
 public abstract class Cliente {
-    private Long idCliente;
+    Long idCliente;
     private String nombre;
     private String apellido;
     private String telefono;
@@ -14,30 +16,35 @@ public abstract class Cliente {
 
     public Cliente() {}
 
-    public Cliente(Long idCliente, String nombre, String apellido, 
-    String telefono, String email, LocalDate fechaAlta, Cuenta[] cuentas, 
+
+    public Cliente(long i, String nombre, String apellido, 
+    String telefono, String email, Object fecha, Cuenta[] cuentas, 
     Float ingresoMensual, Prestamo[] prestamos) {
-        this.idCliente = idCliente;
+        this.idCliente = i;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
-        this.fechaAlta = fechaAlta;
+        this.fechaAlta = (LocalDate) fecha;
         this.cuentas = cuentas;
         this.ingresoMensual = ingresoMensual;
         this.prestamos = prestamos;
     }
 
-    public Cliente(Long idCliente, String nombre, String apellido, String telefono, 
-    String email, LocalDate fechaAlta) {
-        this.idCliente = idCliente;
+    public Cliente(int i, String nombre, String apellido, String telefono, 
+    String email, LocalDate localdate) {
+        this.idCliente = (long) i;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
-        this.fechaAlta = fechaAlta;
+        this.fechaAlta = localdate;
     }
 
+
+    public Cliente(Long idCliente2, String nombre2, String apellido2, String telefono2, String email2,
+            LocalDate fechaAlta2, Cuenta[] cuentas2, Float ingresoMensual2, Prestamo[] prestamos2) {
+    }
 
     public Long getIdCliente() {
         return this.idCliente;
@@ -113,11 +120,6 @@ public abstract class Cliente {
 
     public abstract Float calculoBalance();
 
-    public Long calculoAntiguedad(){
-        LocalDate momentoActual = LocalDate.now();
-        long antiguedad = ChronoUnit.MONTHS.between(getFechaAlta(), momentoActual);
-        return antiguedad;
-    }
 
     @Override
     public String toString() {
