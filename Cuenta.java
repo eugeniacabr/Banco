@@ -1,5 +1,6 @@
 public class Cuenta {
 
+    public static Object cuenta;
     private Integer idCuenta;
     private Boolean status;
     private Float balance;
@@ -47,5 +48,9 @@ public class Cuenta {
             ", status='" + isStatus() + "'" +
             ", balance='" + getBalance() + "'" +
             "}";
+    }
+
+    public int size() {
+        return 0;
     }
 }

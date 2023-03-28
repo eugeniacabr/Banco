@@ -1,11 +1,14 @@
-import java.time.LocalDate;
+
+import java.util.Date;
 
 public class ClienteB extends Cliente implements InterfaceClienteService {
 
-    public ClienteB(Long idCliente, String nombre, String apellido, String telefono,
-     String email, LocalDate fechaAlta, Cuenta[] cuentas, Float ingresoMensual, Prestamo[] prestamos) {
-        super(idCliente,nombre,apellido,telefono,email,fechaAlta,cuentas,ingresoMensual,prestamos);
+    public ClienteB(int i, String nombre, String apellido, String telefono,
+     String email, Date fecha, Cuenta[] cuentas, Float ingresoMensual, Prestamo[] prestamos) {
+        super(i,nombre,apellido,telefono,email,fecha,cuentas,ingresoMensual,prestamos);
     }
+
+    public ClienteB(){}
 
     @Override
     public Float calculoPrestamo() {
