@@ -25,9 +25,6 @@ public class Main {
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyy");
             LocalDate localdate = LocalDate.parse(b,formato);
         
-            //LocalDate fechaHoy=LocalDate.now();
-            //LocalDate fecha1= b.atZone(ZoneId.systemDefault()).toLocalDate();
-            //Period period = Period.between(fecha1,fechaHoy);
 
             if((a >= 2000 ) && (localdate.getYear()>=1)){
                 
